@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Pack Opener</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>Pack Opener</h1>
+  <p class="subtitle">Open a pack and summon 5 heroes of the realm</p>
+
+  <div class="topbar">
+    <div class="wallet">🪙 <span id="gold">500</span> gold</div>
+    <div class="wallet">📦 <span id="packsOpened">0 packs</span> opened</div>
+    <button id="viewBtn" class="secondary">🎒 Inventory</button>
+  </div>
+
+  <main id="packView" class="view">
+    <div class="controls">
+      <button id="openBtn">Open Pack</button>
+      <button id="revealBtn" class="secondary" hidden>Reveal All</button>
+    </div>
+
+    <div id="pack" class="pack">⚔️<br>LEGENDS<br>PACK</div>
+    <div id="cards" class="cards"></div>
+    <p id="hint" class="hint"></p>
+  </main>
+
+  <section id="inventoryView" class="view inventory" hidden>
+    <h2>Inventory</h2>
+    <p id="invCount" class="inv-count"></p>
+    <p class="inv-help">Click a card to view it up close and select it for selling.</p>
+    <div class="inv-tools">
+      <button id="selectAllBtn" class="secondary">Select All</button>
+      <button id="dupesBtn" class="secondary">Select Duplicates</button>
+    </div>
+    <p id="invMsg" class="inv-msg"></p>
+    <div id="invGrid" class="inv-grid"></div>
+
+    <div id="sellBar" class="sell-bar" hidden>
+      <span id="sellSummary"></span>
+      <button id="sellBtn">Sell</button>
+      <button id="clearSelBtn" class="secondary">Clear</button>
+    </div>
+  </section>
+
+  <!-- Enlarged view of an inventory card -->
+  <div id="cardModal" class="modal" hidden>
+    <div class="modal-content">
+      <div id="modalCard"></div>
+      <p id="modalInfo" class="modal-info"></p>
+      <div class="modal-buttons">
+        <button id="modalSelect">Select to sell</button>
+        <button id="modalClose" class="secondary">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cards.js"></script>
+  <script src="js/portraits.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
